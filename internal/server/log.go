@@ -8,7 +8,7 @@ import (
 var ErrOffsetNotFound = fmt.Errorf("offset not found")
 
 type Record struct {
-	Value  []byte `json:"value"`
+	Value  string `json:"value"` // originally typed as []byte, but doesn't work: https://pkg.go.dev/encoding/json#Unmarshal
 	Offset uint64 `json:"offset"`
 }
 
