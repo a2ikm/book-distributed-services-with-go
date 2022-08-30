@@ -12,7 +12,7 @@ var (
 )
 
 const (
-	lenWidth = 8
+	lenWidth = 8 // size of uint64
 )
 
 type store struct {
