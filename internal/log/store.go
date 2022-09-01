@@ -15,6 +15,16 @@ const (
 	lenWidth = 8 // size of uint64
 )
 
+// Data layout of entry in store file
+//
+// 0       8
+// +-------+-------
+// | a     | b
+// +-------+-------
+//
+// a: byte length of the record
+// b: record with arbitrary byte length
+
 type store struct {
 	*os.File
 	mu   sync.Mutex

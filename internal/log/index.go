@@ -13,6 +13,16 @@ var (
 	endWidth        = offWidth + posWidth
 )
 
+// Data layout of entry in index file
+//
+// 0   4      12
+// +---+-------+
+// | a | b     |
+// +---+-------+
+//
+// a: offset of the record, which is relative to the segment's baseOffset
+// b: position of the record in the segment's store
+
 type index struct {
 	file *os.File
 	mmap gommap.MMap
